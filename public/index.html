@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Memo Chat</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div id="login">
+  <h2>Memo Chat</h2>
+  <input id="phone" placeholder="Phone number">
+  <button onclick="sendOTP()">Send OTP</button>
+</div>
+
+<div id="otp" class="hidden">
+  <input id="otpInput" placeholder="Enter OTP (123456)">
+  <button onclick="verifyOTP()">Verify</button>
+</div>
+
+<div id="app" class="hidden">
+  <header>
+    <span id="me"></span>
+    <button onclick="logout()">Logout</button>
+  </header>
+  <div class="container">
+    <div class="sidebar">
+      <div class="chat-item" onclick="openAI()">🤖 Memo AI</div>
+    </div>
+    <div class="chatbox">
+      <div id="messages"></div>
+      <div class="input-box">
+        <input id="msg" placeholder="Type message">
+        <button onclick="send()">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/script.js"></script>
+</body>
+</html>
